@@ -1,8 +1,12 @@
 /**
  *  Una cárcel tiene varios prisioneros y varios caramelos para distribuirles.
-    Su carcelero decide que la forma más justa de dividir las golosinas es sentar a los prisioneros alrededor de una mesa circular en sillas numeradas secuencialmente.
-    Se sacará un número de silla de un sombrero. Comenzando con el prisionero en esa silla, se entregará un caramelo a cada prisionero secuencialmente alrededor de la mesa hasta que todos hayan sido distribuidos.
-    Sin embargo, el carcelero está jugando una "pequeña" broma. El último dulce se parece a todos los demás, pero tiene veneno.
+    Su carcelero decide que la forma más justa de dividir las golosinas es sentar a los prisioneros alrededor 
+    de una mesa circular en sillas numeradas secuencialmente.
+    Se sacará un número de silla de un sombrero. 
+    Comenzando con el prisionero en esa silla, se entregará un caramelo a cada prisionero secuencialmente 
+    alrededor de la mesa hasta que todos hayan sido distribuidos.
+    Sin embargo, el carcelero está jugando una "pequeña" broma. 
+    El último dulce se parece a todos los demás, pero tiene veneno.
     Determine el número de silla ocupado por el prisionero que recibirá ese caramelo.
     Desarrolle la funcion saveThePrisoner que devuelva el numero de prisionero que recibe la ultima golosina.
  */
@@ -15,10 +19,21 @@
  * @return el numero de prisionero que recibe la ultima golosina
  */
 const saveThePrisioner = function(n,m,s){
-
+   let ultimoPrisionero = s-1;
+   for (let index = 1; index <= m; index++) {
+      ultimoPrisionero++;
+      if(ultimoPrisionero == n && index<m){
+         ultimoPrisionero = 0;
+      }
+   }
+   return `El ultimo Prisionero en recibir el caramelo envenenado se encuentra en la silla N° ${ultimoPrisionero}`;
 }
 
 // TEST
-console.log(saveThePrisioner(5,2,1) === 2);
-console.log(saveThePrisioner(7,19,2) === 6);
-console.log(saveThePrisioner(3,7,3) === 3);
+// console.log(saveThePrisioner(5,2,1) === 2);
+// console.log(saveThePrisioner(7,19,2) === 6);
+// console.log(saveThePrisioner(3,7,3) === 3);
+
+console.log(saveThePrisioner(5,2,1));
+console.log(saveThePrisioner(7,19,2));
+console.log(saveThePrisioner(3,7,3));
