@@ -19,6 +19,10 @@
  * @return el numero de prisionero que recibe la ultima golosina
  */
 const saveThePrisioner = function(n,m,s){
+   // if(n<m)
+   //    return s+m-1;
+   // else
+   //    return ((m%n) + (s-1)); //19/7 =2 y sobra 5
    let ultimoPrisionero = s-1;
    for (let index = 1; index <= m; index++) {
       ultimoPrisionero++;
@@ -26,14 +30,15 @@ const saveThePrisioner = function(n,m,s){
          ultimoPrisionero = 0;
       }
    }
-   return `El ultimo Prisionero en recibir el caramelo envenenado se encuentra en la silla N° ${ultimoPrisionero}`;
+   return ultimoPrisionero;
 }
 
 // TEST
-// console.log(saveThePrisioner(5,2,1) === 2);
-// console.log(saveThePrisioner(7,19,2) === 6);
-// console.log(saveThePrisioner(3,7,3) === 3);
+console.log(saveThePrisioner(5,2,1) === 2);
+console.log(saveThePrisioner(7,19,2) === 6);
+console.log(saveThePrisioner(3,7,3) === 3);
 
 console.log(saveThePrisioner(5,2,1));
 console.log(saveThePrisioner(7,19,2));
 console.log(saveThePrisioner(3,7,3));
+console.log(saveThePrisioner(200000,1000000,3)===2);
