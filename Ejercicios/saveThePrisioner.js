@@ -30,3 +30,4 @@ const saveThePrisoner = function(n,m,s){
 console.log(saveThePrisoner(5,2,1) === 2);
 console.log(saveThePrisoner(7,19,2) === 6);
 console.log(saveThePrisoner(3,7,3) === 3);
+//console.log(saveThePrisoner(200000,1000000,3) === );
