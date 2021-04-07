@@ -24,5 +24,8 @@ const str = `<ul>
 // Desarrollar una funcion que me devuelva el total de segundos de los videos de tipo Redux
 // Transformar la cadena en objetos que pueda trabajar con los metodos vistos hasta ahora.
 
+'nada'
 
-
+function nada(eventos){
+  return 0;
+}
