@@ -1,0 +1,24 @@
+{
+  "name": "betp2-2021c1-a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ORT-PabloFernandez/BETP2-2021C1-A.git"
+  },
+  "author": "Pablo Fernandez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ORT-PabloFernandez/BETP2-2021C1-A/issues"
+  },
+  "homepage": "https://github.com/ORT-PabloFernandez/BETP2-2021C1-A#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "validator": "^13.5.2"
+  }
+}
