@@ -1,9 +1,9 @@
-const fs = require('fs');
+import { readFileSync, writeFileSync } from 'fs';
 
-const PATH = `${__dirname}/inventors.json`;
+const PATH = `./inventors.json`;
 
 function getInventors(){
-    return JSON.parse(fs.readFileSync(PATH, 'utf-8'));
+    return JSON.parse(readFileSync(PATH, 'utf-8'));
 }
 
 function getInventor(id){
@@ -15,7 +15,7 @@ function pushInventor(inventor){
     const inventors = getInventors();
     inventors.push(inventor);
     
-    fs.writeFileSync(PATH, JSON.stringify(inventors, null, ' '));
+    writeFileSync(PATH, JSON.stringify(inventors, null, ' '));
     return getInventor(inventor._id);
 }
 
@@ -24,7 +24,7 @@ function deleteInventor(id){
     inventors.splice(
         inventors.findIndex(inventor => inventor._id == id),1
     );
-    fs.writeFileSync(PATH, JSON.stringify(inventors, null, ' '));
+    writeFileSync(PATH, JSON.stringify(inventors, null, ' '));
 }
 
 function updateInventor(inventor){
@@ -32,7 +32,7 @@ function updateInventor(inventor){
     inventors.splice(
         inventors.findIndex(currentInventor => currentInventor._id == inventor.id),1,inventor
     );
-    fs.writeFileSync(PATH, JSON.stringify(inventors, null, ' '));
+    writeFileSync(PATH, JSON.stringify(inventors, null, ' '));
 }
 
-module.exports = {getInventors, getInventor, pushInventor, deleteInventor, updateInventor}
+export {getInventors, getInventor, pushInventor, deleteInventor, updateInventor}

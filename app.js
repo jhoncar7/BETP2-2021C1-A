@@ -1,7 +1,10 @@
-const validator = require('validator');
+//const validator = require('validator');
+import {validator}  from "validator";
 const chalk = require('chalk');
-const sum = require('./utils').sum;
+//const sum = require('./utils').sum;
+import utils from "./utils";
 //const isArray = require('lodash').isArray;
+
 
 console.log(validator.isEmail('asdfasdf@tecnoshare.com'));
 
