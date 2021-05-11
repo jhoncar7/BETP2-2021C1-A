@@ -1,25 +1,33 @@
 import axios from 'axios';
 
-async function getUsers(){
-    return axios('http://fakeapi.jsonparseronline.com/users');
+function getUsers(){
+    return axios.request('http://fakeapi.jsonparseronline.com/users');    
 }
 
-const users = await getUsers();
-console.log(users);
+async function llamada(){
+    setInterval(async () => {
+        const users = await getUsers();    
+        console.log('corrio');
+    }, 5000);    
+}
+await llamada();
+//console.log(users);
 
 // const axios = require('axios');
 
 // async function getAllUsers(){
-//     let usuarios = axios('http://fakeapi.jsonparseronline.com/users');
+//     let usuarios = await axios.request('http://fakeapi.jsonparseronline.com/users');
 //     return usuarios; 
 // }
 
-// async function getUser(id){
-//     return axios('http://fakeapi.jsonparseronline.com/users/'+id);
+// function getUser(id){
+//     return axios.request('http://fakeapi.jsonparseronline.com/users/'+id);
 // }
 
+// (async function(){
 // const usuarios = await getAllUsers();
 // console.log(usuarios);
+// })();
 
 
 
